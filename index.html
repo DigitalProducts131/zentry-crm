@@ -731,22 +731,28 @@
 </div>
 
 <script>
+  function submitToTally(email, formId, successId) {
+    var formData = new FormData();
+    formData.append('email', email);
+    fetch('https://tally.so/r/obVMPx', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    }).catch(function(){});
+    document.getElementById(formId).style.display = 'none';
+    document.getElementById(successId).style.display = 'block';
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     var email = document.getElementById('email-input').value;
-    document.getElementById('waitlist-form').style.display = 'none';
-    document.getElementById('success-msg').style.display = 'block';
-    console.log('Waitlist signup:', email);
-    // TODO: Connect to Mailchimp, ConvertKit, or Tally.so
+    submitToTally(email, 'waitlist-form', 'success-msg');
   }
 
   function handleSubmit2(e) {
     e.preventDefault();
     var email = document.getElementById('email-input-2').value;
-    document.getElementById('waitlist-form-2').style.display = 'none';
-    document.getElementById('success-msg-2').style.display = 'block';
-    console.log('Waitlist signup:', email);
-    // TODO: Connect to Mailchimp, ConvertKit, or Tally.so
+    submitToTally(email, 'waitlist-form-2', 'success-msg-2');
   }
 
   // Animate sections on scroll
