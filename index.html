@@ -3,298 +3,913 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — ZentryCRM</title>
+<title>ZentryCRM — Cold Outreach CRM for Google Sheets</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;font-size:16px;color:#0A0F1E;background:#FFFFFF;line-height:1.7}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06)}
-.nav-logo{font-size:20px;font-weight:700;color:#0A0F1E;text-decoration:none;letter-spacing:-.03em}
-.nav-logo span{color:#0A5CFF}
-.nav-back{font-size:14px;color:#6B7280;text-decoration:none}
-.nav-back:hover{color:#0A5CFF}
-.container{max-width:760px;margin:0 auto;padding:100px 40px 80px}
-.hero{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid #E5E7EB}
-.badge{display:inline-block;background:#EEF4FF;color:#0A5CFF;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px}
-h1{font-size:36px;font-weight:700;color:#0A0F1E;letter-spacing:-.02em;margin-bottom:12px;line-height:1.15}
-.meta{font-size:14px;color:#6B7280}
-.toc{background:#F6F8FC;border:1px solid #E5E7EB;border-radius:12px;padding:24px 28px;margin-bottom:48px}
-.toc-title{font-size:13px;font-weight:700;color:#374151;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
-.toc ol{padding-left:20px}
-.toc li{margin-bottom:6px}
-.toc a{font-size:14px;color:#0A5CFF;text-decoration:none}
-.toc a:hover{text-decoration:underline}
-.section{margin-bottom:48px}
-h2{font-size:22px;font-weight:700;color:#0A0F1E;margin-bottom:16px;padding-top:8px;border-top:2px solid #0A5CFF;display:inline-block}
-h3{font-size:17px;font-weight:600;color:#0A0F1E;margin-bottom:10px;margin-top:24px}
-p{color:#374151;margin-bottom:14px;font-size:15px}
-ul,ol{padding-left:24px;margin-bottom:14px}
-li{color:#374151;font-size:15px;margin-bottom:6px;line-height:1.65}
-.highlight{background:#EEF4FF;border-left:3px solid #0A5CFF;border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
-.highlight p{margin-bottom:0;color:#1E40AF;font-size:14px}
-.contact-box{background:#F6F8FC;border:1px solid #E5E7EB;border-radius:12px;padding:24px;margin-top:20px}
-.contact-box p{margin-bottom:8px;font-size:15px}
-.contact-box a{color:#0A5CFF;text-decoration:none}
-.contact-box a:hover{text-decoration:underline}
-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
-th{background:#F6F8FC;color:#374151;font-weight:600;padding:10px 14px;text-align:left;border:1px solid #E5E7EB}
-td{padding:10px 14px;border:1px solid #E5E7EB;color:#374151;vertical-align:top}
-tr:nth-child(even) td{background:#FAFAFA}
-footer{background:#0A0F1E;padding:32px 40px;text-align:center;font-size:13px;color:rgba(255,255,255,.4)}
-footer a{color:rgba(255,255,255,.6);text-decoration:none}
-footer a:hover{color:white}
-.footer-logo{font-size:18px;font-weight:700;color:white;margin-bottom:8px;letter-spacing:-.02em}
-.footer-logo span{color:#0A5CFF}
-@media(max-width:600px){nav{padding:0 20px}.container{padding:88px 20px 60px}h1{font-size:28px}footer{padding:24px 20px}}
+:root {
+  --blue: #0A5CFF;
+  --blue-dark: #0040CC;
+  --blue-light: #EEF4FF;
+  --navy: #0A0F1E;
+  --navy2: #111827;
+  --green: #059669;
+  --green-light: #D1FAE5;
+  --text: #0A0F1E;
+  --muted: #6B7280;
+  --border: #E5E7EB;
+  --bg: #F6F8FC;
+  --white: #FFFFFF;
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.nav-logo {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--navy); letter-spacing: -.03em;
+}
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-size: 14px; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--navy); }
+.nav-cta {
+  background: var(--blue); color: white;
+  padding: 9px 22px; border-radius: 8px;
+  font-size: 14px; font-weight: 600;
+  text-decoration: none; transition: background .2s;
+}
+.nav-cta:hover { background: var(--blue-dark); }
+
+/* HERO */
+.hero {
+  padding: 140px 40px 100px;
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blue-light); color: var(--blue);
+  padding: 6px 14px; border-radius: 100px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .04em; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-badge span { width: 7px; height: 7px; background: var(--blue); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:.4} }
+h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 56px; line-height: 1.08;
+  color: var(--navy); margin-bottom: 24px;
+  letter-spacing: -.02em;
+}
+h1 em { font-style: italic; color: var(--blue); }
+.hero-sub {
+  font-size: 18px; color: var(--muted);
+  line-height: 1.65; margin-bottom: 36px;
+  font-weight: 400;
+}
+.hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--blue); color: white;
+  padding: 14px 28px; border-radius: 10px;
+  font-size: 15px; font-weight: 600;
+  text-decoration: none; transition: all .2s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(10,92,255,.25); }
+.btn-secondary {
+  color: var(--muted); font-size: 14px; font-weight: 500;
+  text-decoration: none; display: flex; align-items: center; gap: 6px;
+}
+.hero-trust {
+  margin-top: 28px; display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--muted);
+}
+.trust-avatars { display: flex; }
+.trust-avatars div {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 2px solid white; margin-left: -8px;
+  font-size: 11px; font-weight: 700; color: white;
+  display: flex; align-items: center; justify-content: center;
+}
+.trust-avatars div:first-child { margin-left: 0; }
+
+/* HERO MOCKUP */
+.hero-visual {
+  position: relative;
+}
+.mockup-shell {
+  background: var(--navy);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(10,15,30,.25), 0 0 0 1px rgba(255,255,255,.08);
+}
+.mockup-bar {
+  background: #1A2340; padding: 10px 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.d1{background:#FF5F57;} .d2{background:#FFBD2E;} .d3{background:#27C93F;}
+.mockup-bar-title {
+  flex: 1; text-align: center; font-size: 11px;
+  color: rgba(255,255,255,.4); font-weight: 500;
+}
+.mockup-body { padding: 16px; }
+.m-hdr {
+  background: var(--blue); border-radius: 10px 10px 0 0;
+  padding: 12px 16px; text-align: center;
+  font-weight: 800; font-size: 18px; color: white; letter-spacing: -.02em;
+}
+.m-hdr span { color: #C8D9FF; }
+.m-tabs {
+  background: white; display: flex;
+  border-bottom: 2px solid var(--border);
+}
+.m-tab {
+  flex: 1; padding: 8px 4px; text-align: center;
+  font-size: 9px; font-weight: 700; color: #9CA3AF;
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+}
+.m-tab.on { color: var(--blue); border-bottom-color: var(--blue); }
+.m-body { background: var(--bg); padding: 10px; }
+.m-card {
+  background: white; border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px; margin-bottom: 8px;
+}
+.m-card-title { font-size: 9px; font-weight: 700; color: #9CA3AF; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 7px; }
+.m-inp {
+  width: 100%; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 5px; padding: 6px 8px; font-size: 10px; color: var(--text);
+  margin-bottom: 5px;
+}
+.m-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+.m-stat { background: white; border: 1px solid var(--border); border-radius: 7px; padding: 8px; text-align: center; }
+.m-stat-n { font-size: 16px; font-weight: 800; color: var(--blue); }
+.m-stat-l { font-size: 8px; color: #9CA3AF; margin-top: 1px; text-transform: uppercase; }
+.m-contact {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 6px; border-bottom: .5px solid var(--bg);
+  font-size: 9px;
+}
+.m-contact:last-child { border-bottom: none; }
+.m-cb { width: 11px; height: 11px; border-radius: 3px; background: var(--blue); flex-shrink: 0; }
+.m-cname { font-weight: 600; color: var(--blue); min-width: 60px; }
+.m-cemail { color: #9CA3AF; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.m-tag { padding: 1px 5px; border-radius: 3px; font-size: 8px; font-weight: 700; }
+.m-tag-s { background: var(--blue-light); color: var(--blue); }
+.m-tag-r { background: var(--green-light); color: var(--green); }
+.m-tag-p { background: #FEF3C7; color: #92400E; }
+.m-btn { display: block; width: 100%; padding: 7px; border-radius: 6px; border: none; font-size: 10px; font-weight: 700; margin-bottom: 5px; cursor: pointer; }
+.m-btn-blue { background: var(--blue); color: white; }
+.m-btn-green { background: var(--green); color: white; }
+.m-btn-purple { background: #7C3AED; color: white; }
+.float-badge {
+  position: absolute; right: -20px; top: 30px;
+  background: white; border-radius: 10px;
+  padding: 10px 14px; box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  font-size: 12px; font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)} }
+.float-badge2 {
+  position: absolute; left: -16px; bottom: 60px;
+  background: white; border-radius: 10px;
+  padding: 10px 14px; box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  font-size: 12px; font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+  animation: float 3s ease-in-out infinite .8s;
+}
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* LOGOS */
+.logos-section {
+  padding: 40px; text-align: center;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.logos-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; margin-bottom: 20px; }
+.logos-row { display: flex; gap: 40px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.logo-item { font-size: 15px; font-weight: 700; color: #C1C8D4; letter-spacing: -.02em; }
+
+/* FEATURES */
+.features {
+  padding: 100px 40px;
+  max-width: 1100px; margin: 0 auto;
+}
+.section-label {
+  font-size: 12px; font-weight: 700; color: var(--blue);
+  text-transform: uppercase; letter-spacing: .1em;
+  margin-bottom: 16px;
+}
+h2 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 44px; line-height: 1.1;
+  color: var(--navy); margin-bottom: 16px;
+  letter-spacing: -.02em;
+}
+h2 em { font-style: italic; color: var(--blue); }
+.section-sub { font-size: 18px; color: var(--muted); max-width: 560px; line-height: 1.6; margin-bottom: 60px; }
+
+.features-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
+}
+.feature-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px;
+  transition: all .25s;
+  position: relative; overflow: hidden;
+}
+.feature-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--blue-light) 0%, transparent 60%);
+  opacity: 0; transition: opacity .25s;
+}
+.feature-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(10,92,255,.1); }
+.feature-card:hover::before { opacity: 1; }
+.feature-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--blue-light); display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: 16px; position: relative; z-index: 1;
+}
+.feature-card h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; position: relative; z-index: 1; }
+.feature-card p { font-size: 14px; color: var(--muted); line-height: 1.65; position: relative; z-index: 1; }
+
+/* BIG FEATURE */
+.big-feature {
+  padding: 80px 40px;
+  background: var(--navy);
+}
+.big-feature-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.big-feature h2 { color: white; }
+.big-feature h2 em { color: #7BAEFF; }
+.big-feature .section-label { color: #7BAEFF; }
+.big-feature .section-sub { color: rgba(255,255,255,.6); }
+.feature-list { list-style: none; }
+.feature-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08);
+  font-size: 15px; color: rgba(255,255,255,.8);
+}
+.feature-list li:last-child { border-bottom: none; }
+.check {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(5,150,105,.2); border: 1px solid rgba(5,150,105,.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; flex-shrink: 0; margin-top: 1px;
+  color: #34D399;
+}
+.kanban-preview {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px; padding: 16px; overflow: hidden;
+}
+.kanban-header { display: flex; gap: 8px; margin-bottom: 12px; }
+.k-stage {
+  flex: 1; border-radius: 6px; padding: 6px 8px;
+  font-size: 9px; font-weight: 700; text-align: center;
+}
+.k-cards { display: flex; gap: 8px; }
+.k-col { flex: 1; }
+.k-card {
+  border-radius: 7px; padding: 8px; margin-bottom: 6px;
+  border: 1px solid;
+}
+.k-card-name { font-size: 10px; font-weight: 700; margin-bottom: 2px; }
+.k-card-co { font-size: 8px; margin-bottom: 4px; }
+.k-card-val { font-size: 10px; font-weight: 700; }
+.k-card-age { font-size: 8px; margin-top: 2px; }
+
+/* HOW IT WORKS */
+.how {
+  padding: 100px 40px;
+  max-width: 1100px; margin: 0 auto;
+}
+.steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; margin-top: 60px; }
+.step { position: relative; }
+.step-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--blue); color: white;
+  font-size: 16px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.step::after {
+  content: ''; position: absolute;
+  top: 20px; left: 50px; right: -50%;
+  height: 1px; background: var(--border);
+  z-index: 0;
+}
+.step:last-child::after { display: none; }
+.step h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.step p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+/* PRICING */
+.pricing {
+  padding: 100px 40px;
+  background: var(--bg);
+}
+.pricing-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.pricing-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 60px; }
+.price-card {
+  background: white; border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px 24px;
+  text-align: left; position: relative; transition: all .2s;
+}
+.price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,.1); }
+.price-card.featured {
+  border-color: var(--blue); background: var(--blue);
+  color: white;
+}
+.price-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--green); color: white;
+  padding: 3px 12px; border-radius: 100px;
+  font-size: 11px; font-weight: 700; white-space: nowrap;
+}
+.price-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 8px; }
+.price-card.featured .price-name { color: rgba(255,255,255,.7); }
+.price-amount { font-family: 'Instrument Serif', serif; font-size: 42px; line-height: 1; color: var(--navy); margin-bottom: 4px; }
+.price-card.featured .price-amount { color: white; }
+.price-period { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.price-card.featured .price-period { color: rgba(255,255,255,.6); }
+.price-features { list-style: none; margin-bottom: 24px; }
+.price-features li {
+  font-size: 13px; color: var(--text); padding: 5px 0;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: .5px solid var(--border);
+}
+.price-card.featured .price-features li { color: rgba(255,255,255,.9); border-color: rgba(255,255,255,.15); }
+.price-features li:last-child { border-bottom: none; }
+.price-features li::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 12px; flex-shrink: 0; }
+.price-card.featured .price-features li::before { color: #6EE7B7; }
+.price-btn {
+  display: block; width: 100%; padding: 11px;
+  border-radius: 8px; font-size: 14px; font-weight: 700;
+  text-align: center; text-decoration: none; border: none; cursor: pointer;
+  transition: all .2s;
+}
+.price-btn-outline {
+  background: transparent; border: 1.5px solid var(--border);
+  color: var(--navy);
+}
+.price-btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+.price-btn-solid { background: white; color: var(--blue); }
+.price-btn-solid:hover { background: var(--blue-light); }
+
+/* STATS */
+.stats-band {
+  background: var(--navy); padding: 60px 40px;
+}
+.stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+.stat-item { text-align: center; padding: 0 20px; border-right: 1px solid rgba(255,255,255,.1); }
+.stat-item:last-child { border-right: none; }
+.stat-num { font-family: 'Instrument Serif', serif; font-size: 52px; color: white; line-height: 1; }
+.stat-num span { color: var(--blue); }
+.stat-label { font-size: 14px; color: rgba(255,255,255,.5); margin-top: 8px; }
+
+/* TESTIMONIALS */
+.testimonials { padding: 100px 40px; max-width: 1100px; margin: 0 auto; }
+.testimonial-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 60px; }
+.testimonial-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px;
+}
+.testimonial-stars { color: #FBBF24; font-size: 14px; margin-bottom: 14px; }
+.testimonial-text { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 10px; }
+.testimonial-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: white; flex-shrink: 0;
+}
+.testimonial-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+.testimonial-role { font-size: 12px; color: var(--muted); }
+
+/* CTA */
+.cta-section {
+  padding: 100px 40px;
+  background: var(--blue);
+  text-align: center;
+}
+.cta-section h2 { color: white; font-size: 48px; }
+.cta-section h2 em { color: #C8D9FF; font-style: italic; }
+.cta-section p { color: rgba(255,255,255,.75); font-size: 18px; max-width: 500px; margin: 16px auto 40px; line-height: 1.65; }
+.cta-white {
+  background: white; color: var(--blue);
+  padding: 16px 36px; border-radius: 10px;
+  font-size: 16px; font-weight: 700;
+  text-decoration: none; display: inline-block;
+  transition: all .2s;
+}
+.cta-white:hover { background: var(--blue-light); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,.2); }
+.cta-note { color: rgba(255,255,255,.5); font-size: 13px; margin-top: 16px; }
+
+/* FOOTER */
+footer {
+  background: var(--navy); padding: 48px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-logo { font-size: 20px; font-weight: 700; color: white; letter-spacing: -.03em; }
+.footer-logo span { color: var(--blue); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,.4); text-decoration: none; }
+.footer-links a:hover { color: rgba(255,255,255,.7); }
+.footer-copy { font-size: 13px; color: rgba(255,255,255,.3); }
+
+/* ANIMATIONS */
+.fade-up { opacity: 0; transform: translateY(24px); transition: all .6s cubic-bezier(.16,1,.3,1); }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+  .hero-visual { display: none; }
+  h1 { font-size: 40px; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .big-feature-inner { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .stats-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  footer { flex-direction: column; gap: 20px; text-align: center; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo">Zentry<span>CRM</span></a>
-  <a href="/" class="nav-back">← Back to home</a>
+  <div class="nav-logo">Zentry<span>CRM</span></div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+  <a href="https://tally.so/r/obVMPx" class="nav-cta">Get Early Access</a>
 </nav>
 
-<div class="container">
-
-  <div class="hero">
-    <div class="badge">Legal</div>
-    <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: April 19, 2026 &nbsp;·&nbsp; Effective: April 19, 2026</p>
-  </div>
-
-  <div class="highlight">
-    <p><strong>Plain English summary:</strong> ZentryCRM is a Google Workspace Add-on that runs inside your Google Sheets. We access your Gmail and Google Calendar only to send emails and schedule meetings on your behalf — at your direction. We do not store your emails, contacts, or personal data on our servers. Everything stays in your Google account.</p>
-  </div>
-
-  <div class="toc">
-    <div class="toc-title">Table of Contents</div>
-    <ol>
-      <li><a href="#about">About ZentryCRM</a></li>
-      <li><a href="#data-collected">What Data We Access</a></li>
-      <li><a href="#how-we-use">How We Use Your Data</a></li>
-      <li><a href="#data-storage">Where Data Is Stored</a></li>
-      <li><a href="#google-apis">Google API Usage</a></li>
-      <li><a href="#sharing">Data Sharing</a></li>
-      <li><a href="#retention">Data Retention</a></li>
-      <li><a href="#security">Security</a></li>
-      <li><a href="#children">Children's Privacy</a></li>
-      <li><a href="#rights">Your Rights</a></li>
-      <li><a href="#changes">Changes to This Policy</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ol>
-  </div>
-
-  <!-- 1 -->
-  <div class="section" id="about">
-    <h2>1. About ZentryCRM</h2>
-    <p>ZentryCRM ("we," "our," or "us") is a Google Workspace Add-on developed and operated by ZentryCRM (zentrycrm.com). The add-on runs entirely within Google Sheets and uses Google Workspace APIs to provide cold outreach and CRM functionality.</p>
-    <p>This Privacy Policy explains how ZentryCRM accesses, uses, and protects information when you install and use the add-on. By installing ZentryCRM, you agree to the terms of this policy.</p>
-  </div>
-
-  <!-- 2 -->
-  <div class="section" id="data-collected">
-    <h2>2. What Data We Access</h2>
-    <p>ZentryCRM requests the following Google Workspace permissions in order to function. We access only what is necessary for the features you use.</p>
-
-    <table>
-      <tr>
-        <th>Permission</th>
-        <th>What we access</th>
-        <th>Why we need it</th>
-      </tr>
-      <tr>
-        <td><strong>Google Sheets</strong></td>
-        <td>The active spreadsheet and its data</td>
-        <td>To read your contact lists, write campaign tracking data, and build the Sales Channel dashboard — all within your own spreadsheet</td>
-      </tr>
-      <tr>
-        <td><strong>Gmail (Send)</strong></td>
-        <td>Your Gmail account to send emails</td>
-        <td>To send personalized outreach emails on your behalf when you click Send</td>
-      </tr>
-      <tr>
-        <td><strong>Gmail (Read)</strong></td>
-        <td>Email threads from contacts in your campaigns</td>
-        <td>To scan for replies from contacts you have emailed, so we can update your campaign tracker and stop sequences automatically</td>
-      </tr>
-      <tr>
-        <td><strong>Google Calendar</strong></td>
-        <td>Your default calendar</td>
-        <td>To create meeting events with Google Meet links when you use the Schedule Meeting feature</td>
-      </tr>
-      <tr>
-        <td><strong>Google Account (Identity)</strong></td>
-        <td>Your email address</td>
-        <td>To identify your account and use as the default reply-to address when sending emails</td>
-      </tr>
-    </table>
-
-    <h3>Data you enter directly</h3>
-    <p>When you use ZentryCRM you may enter the following information into your Google Sheet or sidebar settings:</p>
-    <ul>
-      <li>Contact information (names, email addresses, phone numbers, company names)</li>
-      <li>Your sender information (name, title, company, reply-to email, meeting link)</li>
-      <li>Email templates and campaign content</li>
-      <li>Deal values and pipeline notes</li>
-    </ul>
-    <p>This data is stored directly in your Google Spreadsheet — not on ZentryCRM servers.</p>
-
-    <h3>Open tracking data</h3>
-    <p>When you send emails through ZentryCRM, each email contains a small invisible tracking pixel (a 1×1 image). When a recipient opens the email, a request is made to our web app URL hosted on Google Apps Script servers. This request logs:</p>
-    <ul>
-      <li>The recipient's email address (which you provided)</li>
-      <li>The campaign name</li>
-      <li>The date and time of the open</li>
-    </ul>
-    <p>This data is written back to your Google Spreadsheet. It is not stored on our servers.</p>
-  </div>
-
-  <!-- 3 -->
-  <div class="section" id="how-we-use">
-    <h2>3. How We Use Your Data</h2>
-    <p>We use the data we access exclusively to provide ZentryCRM features:</p>
-    <ul>
-      <li><strong>Sending emails:</strong> We use your Gmail access to send personalized outreach emails when you click Send in the sidebar</li>
-      <li><strong>Detecting replies:</strong> We scan your Gmail inbox for replies from contacts in your campaigns to update campaign status and stop follow-up sequences automatically</li>
-      <li><strong>Tracking opens:</strong> We log email opens to your spreadsheet via our web app so you can see who opened your emails</li>
-      <li><strong>Scheduling meetings:</strong> We create Google Calendar events with Google Meet links on your behalf when you use the Schedule Meeting feature</li>
-      <li><strong>Managing your spreadsheet:</strong> We read and write to your active Google Sheet to build campaign sheets, the Sales Channel dashboard, and the zDashboard</li>
-    </ul>
-    <p>We do not use your data for advertising, analytics, training machine learning models, or any purpose other than providing the ZentryCRM service to you.</p>
-  </div>
-
-  <!-- 4 -->
-  <div class="section" id="data-storage">
-    <h2>4. Where Data Is Stored</h2>
-    <p>ZentryCRM is architected so that <strong>your data stays in your Google account</strong>:</p>
-    <ul>
-      <li>All contact data, campaign data, pipeline data, templates, settings, and activity logs are stored in your Google Spreadsheet — not on ZentryCRM servers</li>
-      <li>Open tracking events are processed by a Google Apps Script web app and written directly to your spreadsheet</li>
-      <li>Sequence schedules are stored in a hidden sheet within your spreadsheet</li>
-      <li>Unsubscribe requests are stored in a hidden sheet within your spreadsheet</li>
-    </ul>
-
-    <h3>ZentryCRM does not operate a backend database</h3>
-    <p>We do not maintain a server, database, or data warehouse that stores your contacts, emails, pipeline deals, or any personal information about your contacts. The Google Apps Script project that powers ZentryCRM runs on Google's servers under your Google account authorization.</p>
-
-    <h3>Lemon Squeezy (payment processor)</h3>
-    <p>If you purchase a ZentryCRM subscription, payment is processed by Lemon Squeezy. Your billing information is subject to Lemon Squeezy's privacy policy. We receive confirmation of your subscription status but do not store your payment card details.</p>
-  </div>
-
-  <!-- 5 -->
-  <div class="section" id="google-apis">
-    <h2>5. Google API Usage</h2>
-    <p>ZentryCRM's use of Google APIs is subject to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
-
-    <div class="highlight">
-      <p><strong>Limited Use disclosure:</strong> ZentryCRM's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes" target="_blank" rel="noopener" style="color:#1E40AF">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge"><span></span>Now accepting early access</div>
+    <h1>Close more deals.<br><em>Without the chaos.</em></h1>
+    <p class="hero-sub">The CRM that lives inside Google Sheets. Send personalized campaigns, track opens and replies, run follow-up sequences, and manage your entire pipeline — without learning anything new.</p>
+    <div class="hero-actions">
+      <a href="https://tally.so/r/obVMPx" class="btn-primary">Get early access — it's free →</a>
     </div>
-
-    <p>Specifically, we confirm the following:</p>
-    <ul>
-      <li>We do not allow humans to read your Gmail data unless you explicitly grant permission or it is required for security purposes or to comply with applicable law</li>
-      <li>We do not use your Gmail data to serve advertisements</li>
-      <li>We do not sell your Gmail or Google data to third parties</li>
-      <li>We do not use your Gmail data for any purpose other than providing and improving ZentryCRM features</li>
-      <li>We do not transfer your Gmail data to third parties except as necessary to provide ZentryCRM features with your explicit consent</li>
-    </ul>
-  </div>
-
-  <!-- 6 -->
-  <div class="section" id="sharing">
-    <h2>6. Data Sharing</h2>
-    <p>We do not sell, rent, or share your personal data or your contacts' data with third parties, except in the following limited circumstances:</p>
-    <ul>
-      <li><strong>Google Workspace APIs:</strong> Data flows through Google's own infrastructure when you send emails via Gmail, create calendar events, or access your spreadsheet</li>
-      <li><strong>Lemon Squeezy:</strong> Billing and subscription information is processed by Lemon Squeezy as our payment provider</li>
-      <li><strong>Legal requirements:</strong> We may disclose information if required to do so by law or in response to valid legal process</li>
-    </ul>
-    <p>No other third-party services receive your data.</p>
-  </div>
-
-  <!-- 7 -->
-  <div class="section" id="retention">
-    <h2>7. Data Retention</h2>
-    <p>Because ZentryCRM stores all data in your Google Spreadsheet, data retention is entirely within your control:</p>
-    <ul>
-      <li>You can delete any data from your spreadsheet at any time</li>
-      <li>You can delete the entire spreadsheet to remove all ZentryCRM data</li>
-      <li>Uninstalling ZentryCRM from your Google account revokes all permissions and our add-on can no longer access your data</li>
-    </ul>
-    <p>If you cancel your subscription, you retain access to your spreadsheet and all data in it. We do not delete your data on our end because we do not store it on our end.</p>
-    <p>Open tracking pixels in previously sent emails will continue to log opens to your spreadsheet as long as those emails exist in recipients' inboxes and they open them. You can remove the tracking sheet (zTracking) from your spreadsheet to stop logging new opens.</p>
-  </div>
-
-  <!-- 8 -->
-  <div class="section" id="security">
-    <h2>8. Security</h2>
-    <p>ZentryCRM is built on Google Apps Script, which runs on Google's infrastructure. Security measures include:</p>
-    <ul>
-      <li>All communication between the add-on and Google services uses HTTPS encryption</li>
-      <li>OAuth 2.0 is used for all Google API access — we never see or store your Google password</li>
-      <li>You can revoke ZentryCRM's access at any time from your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions page</a></li>
-      <li>The Apps Script web app URL (used for open tracking and unsubscribe links) accepts only GET requests and does not expose any spreadsheet data publicly</li>
-    </ul>
-    <p>While we take security seriously, no internet transmission is 100% secure. We recommend keeping your Google account secure with a strong password and two-factor authentication.</p>
-  </div>
-
-  <!-- 9 -->
-  <div class="section" id="children">
-    <h2>9. Children's Privacy</h2>
-    <p>ZentryCRM is a business productivity tool intended for use by adults (18 years or older). We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us at cs@zentrycrm.com and we will take steps to delete such information.</p>
-  </div>
-
-  <!-- 10 -->
-  <div class="section" id="rights">
-    <h2>10. Your Rights</h2>
-    <p>Depending on your location, you may have the following rights regarding your data:</p>
-    <ul>
-      <li><strong>Access:</strong> All data ZentryCRM uses is visible in your own Google Spreadsheet. You can view it at any time</li>
-      <li><strong>Deletion:</strong> Delete data from your spreadsheet at any time, or uninstall the add-on to revoke all access</li>
-      <li><strong>Portability:</strong> Your data is already in Google Sheets — you can export it in any format Google Sheets supports</li>
-      <li><strong>Objection:</strong> You can stop using ZentryCRM and uninstall it at any time from your Google Workspace account settings</li>
-    </ul>
-    <p>To exercise any of these rights or for questions about your data, contact us at cs@zentrycrm.com.</p>
-
-    <h3>California residents (CCPA)</h3>
-    <p>California residents have the right to know what personal information we collect, the right to delete personal information, and the right to opt out of the sale of personal information. ZentryCRM does not sell personal information. Because we do not maintain a backend database of user data, the personal information ZentryCRM processes lives in your own Google account. Contact us at cs@zentrycrm.com for any California privacy requests.</p>
-
-    <h3>European residents (GDPR)</h3>
-    <p>If you are located in the European Economic Area, the legal basis for processing your data is your consent (provided when you authorize the Google Workspace permissions) and the performance of the contract to provide ZentryCRM services. You have the right to access, rectify, port, and erase your data, and to withdraw consent at any time by uninstalling the add-on. Contact cs@zentrycrm.com for any GDPR requests.</p>
-  </div>
-
-  <!-- 11 -->
-  <div class="section" id="changes">
-    <h2>11. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. For significant changes, we will notify users via email or a notice within the ZentryCRM sidebar.</p>
-    <p>Your continued use of ZentryCRM after changes to this policy constitutes acceptance of the updated policy.</p>
-  </div>
-
-  <!-- 12 -->
-  <div class="section" id="contact">
-    <h2>12. Contact Us</h2>
-    <p>If you have questions, concerns, or requests regarding this Privacy Policy or ZentryCRM's data practices, please contact us:</p>
-    <div class="contact-box">
-      <p><strong>ZentryCRM</strong></p>
-      <p>Email: <a href="mailto:cs@zentrycrm.com">cs@zentrycrm.com</a></p>
-      <p>Website: <a href="https://www.zentrycrm.com" target="_blank">www.zentrycrm.com</a></p>
-      <p style="margin-top:12px;font-size:13px;color:#6B7280">We aim to respond to all privacy inquiries within 5 business days.</p>
+    <div class="hero-trust">
+      <div class="trust-avatars">
+        <div style="background:#0A5CFF">JM</div>
+        <div style="background:#059669">SR</div>
+        <div style="background:#7C3AED">KP</div>
+        <div style="background:#D97706">AL</div>
+      </div>
+      <span>84 sales reps already on the waitlist</span>
+    </div>
+    <div style="margin-top:14px;display:flex;gap:20px;font-size:13px;color:var(--muted)">
+      <span>✓ Works with Gmail</span>
+      <span>✓ No new tools to learn</span>
+      <span>✓ 2 min setup</span>
     </div>
   </div>
 
+  <div class="hero-visual">
+    <div class="float-badge">
+      <span style="font-size:16px">📬</span>
+      <div><div style="font-size:11px;color:var(--muted)">Sarah Chen just</div><div style="font-size:12px;font-weight:700;color:var(--green)">Replied to your email</div></div>
+    </div>
+    <div class="mockup-shell">
+      <div class="mockup-bar">
+        <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div>
+        <div class="mockup-bar-title">ZentryCRM — Google Sheets</div>
+      </div>
+      <div class="mockup-body">
+        <div class="m-hdr">Zentry<span>CRM</span></div>
+        <div class="m-tabs">
+          <div class="m-tab on">Send</div>
+          <div class="m-tab">Channel</div>
+          <div class="m-tab">Tracker</div>
+          <div class="m-tab">⚙</div>
+        </div>
+        <div class="m-body">
+          <div class="m-stat-row">
+            <div class="m-stat"><div class="m-stat-n">47</div><div class="m-stat-l">Sent</div></div>
+            <div class="m-stat"><div class="m-stat-n" style="color:var(--green)">38%</div><div class="m-stat-l">Open Rate</div></div>
+            <div class="m-stat"><div class="m-stat-n">5</div><div class="m-stat-l">Replies</div></div>
+            <div class="m-stat"><div class="m-stat-n" style="color:var(--green)">67%</div><div class="m-stat-l">Win Rate</div></div>
+          </div>
+          <div class="m-card">
+            <div class="m-card-title">1. Campaign</div>
+            <div class="m-inp">April Outreach 2026 ▾</div>
+            <div style="display:flex;gap:5px;margin-top:4px">
+              <span style="background:var(--blue-light);color:var(--blue);padding:2px 7px;border-radius:4px;font-size:8px;font-weight:700">12 contacts</span>
+              <span style="background:var(--green-light);color:var(--green);padding:2px 7px;border-radius:4px;font-size:8px;font-weight:700">8 unsent</span>
+            </div>
+          </div>
+          <div class="m-card">
+            <div class="m-card-title">3. Contacts</div>
+            <div style="border:1px solid var(--border);border-radius:6px;background:white">
+              <div class="m-contact"><div class="m-cb"></div><span class="m-cname">Sarah Chen</span><span class="m-cemail">s.chen@acme...</span><span class="m-tag m-tag-r">replied</span></div>
+              <div class="m-contact"><div class="m-cb"></div><span class="m-cname">James Park</span><span class="m-cemail">j.park@stack...</span><span class="m-tag m-tag-p">seq</span></div>
+              <div class="m-contact"><div class="m-cb"></div><span class="m-cname">Marcus Webb</span><span class="m-cemail">m.webb@ver...</span><span class="m-tag m-tag-s">sent</span></div>
+            </div>
+          </div>
+          <div class="m-btn m-btn-purple">Push Selected to Sales Channel</div>
+          <div class="m-btn m-btn-green">Send Emails Now</div>
+        </div>
+      </div>
+    </div>
+    <div class="float-badge2">
+      <span style="font-size:16px">🎉</span>
+      <div><div style="font-size:11px;color:var(--muted)">Deal closed!</div><div style="font-size:12px;font-weight:700;color:var(--blue)">$3,600/mo · Closed Won</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos-section">
+  <div class="logos-label">Works with tools you already use</div>
+  <div class="logos-row">
+    <div class="logo-item">Gmail</div>
+    <div class="logo-item">Google Sheets</div>
+    <div class="logo-item">Google Calendar</div>
+    <div class="logo-item">Google Meet</div>
+    <div class="logo-item">Calendly</div>
+  </div>
 </div>
 
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="fade-up">
+    <div class="section-label">Features</div>
+    <h2>Everything you need.<br><em>Nothing you don't.</em></h2>
+    <p class="section-sub">A complete outreach stack — campaigns, sequences, pipeline, and analytics — built directly into Google Sheets.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card fade-up">
+      <div class="feature-icon">📧</div>
+      <h3>Personalized campaigns</h3>
+      <p>Send hundreds of handcrafted emails from Gmail. Template variables auto-fill first name, company, meeting link, and more. Every email looks one-to-one.</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">👁</div>
+      <h3>Open & reply tracking</h3>
+      <p>See who opened your email and how many times. Zentry auto-detects replies by scanning your inbox — no forwarding or plugins needed.</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">🔁</div>
+      <h3>Automatic follow-up sequences</h3>
+      <p>Set up Day 3, Day 7, Day 14 follow-ups in seconds. Sequences stop automatically when a contact replies. Set it and forget it.</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">📊</div>
+      <h3>Sales Channel Kanban</h3>
+      <p>Drag contacts through custom stages — Lead, Contacted, Meeting, Proposal, Closed Won. Color-coded by campaign so you always know where deals came from.</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">💬</div>
+      <h3>One-click SMS</h3>
+      <p>Click any phone number to open Messages with a pre-filled text. Personalized with first name. Ready to send in one tap.</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">📅</div>
+      <h3>Meeting scheduling</h3>
+      <p>Create Google Calendar events with Meet links directly from the contact card. Stage auto-updates to Meeting. No tab switching.</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">🚫</div>
+      <h3>Unsubscribe management</h3>
+      <p>One-click unsubscribe in every email. Zentry automatically skips opted-out contacts forever. Stay compliant without thinking about it.</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">📈</div>
+      <h3>Dashboard & analytics</h3>
+      <p>Track open rates, reply rates, pipeline value, and win rate. Filter by This Year, Last Year, or All Time. See every campaign side by side.</p>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">🔍</div>
+      <h3>Duplicate detection</h3>
+      <p>Instantly scan your entire contact database for duplicate names, emails, and phone numbers across all campaigns at once.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BIG FEATURE — PIPELINE -->
+<section class="big-feature" id="pipeline">
+  <div class="big-feature-inner">
+    <div class="fade-up">
+      <div class="section-label">Sales Channel</div>
+      <h2>Your pipeline.<br><em>Inside your sheet.</em></h2>
+      <p class="section-sub">No separate CRM to maintain. Push contacts from any campaign directly into your Sales Channel. Manage every deal from a full-screen contact card.</p>
+      <ul class="feature-list">
+        <li><div class="check">✓</div>Custom stage names and colors — Lead, Meeting, Proposal, anything</li>
+        <li><div class="check">✓</div>Full-screen contact card with all history, opens, replies, campaign</li>
+        <li><div class="check">✓</div>Deal value tracking — see active channel value and won value</li>
+        <li><div class="check">✓</div>Archive closed deals to keep your active pipeline clean</li>
+        <li><div class="check">✓</div>Win rate and date filtering across years</li>
+        <li><div class="check">✓</div>Campaign color coding — instantly see where every deal came from</li>
+      </ul>
+    </div>
+    <div class="kanban-preview fade-up">
+      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px">Sales Channel Kanban</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px">
+        <div>
+          <div style="background:#EEF4FF;color:#0C447C;padding:5px 8px;border-radius:6px;font-size:9px;font-weight:700;text-align:center;margin-bottom:6px">Lead (2)</div>
+          <div style="background:rgba(238,244,255,.1);border:1px solid rgba(191,219,254,.3);border-radius:7px;padding:8px;margin-bottom:5px">
+            <div style="font-size:10px;font-weight:700;color:white">Sarah Chen</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.5)">Acme Corp</div>
+            <div style="font-size:10px;font-weight:700;color:#34D399;margin-top:4px">$1,200/mo</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.4);margin-top:2px">2d in stage</div>
+          </div>
+          <div style="background:rgba(238,244,255,.07);border:1px solid rgba(191,219,254,.2);border-radius:7px;padding:8px">
+            <div style="font-size:10px;font-weight:700;color:white">Dan Lee</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.5)">Vertex.io</div>
+            <div style="font-size:10px;font-weight:700;color:#34D399;margin-top:4px">$800/mo</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.4);margin-top:2px">1d in stage</div>
+          </div>
+        </div>
+        <div>
+          <div style="background:#FAEEDA;color:#633806;padding:5px 8px;border-radius:6px;font-size:9px;font-weight:700;text-align:center;margin-bottom:6px">Replied (1)</div>
+          <div style="background:rgba(250,238,218,.1);border:1px solid rgba(252,211,77,.3);border-radius:7px;padding:8px">
+            <div style="font-size:10px;font-weight:700;color:white">James Park</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.5)">Stackr Inc</div>
+            <div style="font-size:10px;font-weight:700;color:#34D399;margin-top:4px">$3,600/mo</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.4);margin-top:2px">3d in stage</div>
+          </div>
+        </div>
+        <div>
+          <div style="background:#EEEDFE;color:#3C3489;padding:5px 8px;border-radius:6px;font-size:9px;font-weight:700;text-align:center;margin-bottom:6px">Meeting (1)</div>
+          <div style="background:rgba(238,237,254,.1);border:1px solid rgba(196,181,253,.3);border-radius:7px;padding:8px">
+            <div style="font-size:10px;font-weight:700;color:white">Lisa Torres</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.5)">BluePeak</div>
+            <div style="font-size:10px;font-weight:700;color:#34D399;margin-top:4px">$1,800/mo</div>
+            <div style="font-size:8px;color:#D97706;margin-top:2px">9d ⚠</div>
+          </div>
+        </div>
+        <div>
+          <div style="background:#D1FAE5;color:#065F46;padding:5px 8px;border-radius:6px;font-size:9px;font-weight:700;text-align:center;margin-bottom:6px">Won (2)</div>
+          <div style="background:rgba(209,250,229,.1);border:1px solid rgba(110,231,183,.3);border-radius:7px;padding:8px;margin-bottom:5px">
+            <div style="font-size:10px;font-weight:700;color:#6EE7B7">Raj Patel</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.5)">Orion Labs</div>
+            <div style="font-size:10px;font-weight:700;color:#34D399;margin-top:4px">$2,000/mo</div>
+            <div style="font-size:8px;color:#34D399;margin-top:2px">Won — Price</div>
+          </div>
+          <div style="background:rgba(209,250,229,.07);border:1px solid rgba(110,231,183,.2);border-radius:7px;padding:8px">
+            <div style="font-size:10px;font-weight:700;color:#6EE7B7">Amy Chen</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.5)">Drift Co</div>
+            <div style="font-size:10px;font-weight:700;color:#34D399;margin-top:4px">$1,200/mo</div>
+            <div style="font-size:8px;color:#34D399;margin-top:2px">Won — Referral</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;padding:8px;background:rgba(255,255,255,.05);border-radius:6px;display:flex;justify-content:space-between">
+        <span style="font-size:9px;color:rgba(255,255,255,.4)">Active Channel</span>
+        <span style="font-size:11px;font-weight:700;color:white">$9,200</span>
+        <span style="font-size:9px;color:rgba(255,255,255,.4)">Won Value</span>
+        <span style="font-size:11px;font-weight:700;color:#34D399">$3,200</span>
+        <span style="font-size:9px;color:rgba(255,255,255,.4)">Win Rate</span>
+        <span style="font-size:11px;font-weight:700;color:#34D399">67%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="fade-up">
+    <div class="section-label">How it works</div>
+    <h2>Up and running in <em>2 minutes.</em></h2>
+    <p class="section-sub">No complex onboarding. No new tools. ZentryCRM lives inside Google Sheets — the tool you already use every day.</p>
+  </div>
+  <div class="steps">
+    <div class="step fade-up">
+      <div class="step-num">1</div>
+      <h3>Install from Marketplace</h3>
+      <p>One click install from Google Workspace Marketplace. No signup, no credit card. Opens in any Google Sheet.</p>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">2</div>
+      <h3>Create a campaign</h3>
+      <p>Name your campaign and ZentryCRM builds the sheet instantly — all columns ready, all tracking set up.</p>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">3</div>
+      <h3>Add contacts & preview</h3>
+      <p>Paste contacts or import from any sheet. Preview exactly what each person receives before sending.</p>
+    </div>
+    <div class="step fade-up">
+      <div class="step-num">4</div>
+      <h3>Send & let it run</h3>
+      <p>Send the campaign. Follow-ups schedule automatically. Replies are detected. Your dashboard updates in real time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat-item fade-up">
+      <div class="stat-num">10<span>k+</span></div>
+      <div class="stat-label">Emails sent per month</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="stat-num">84</div>
+      <div class="stat-label">Waitlist signups</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="stat-num">2<span>min</span></div>
+      <div class="stat-label">Average setup time</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="stat-num">$<span>3</span></div>
+      <div class="stat-label">To get started</div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="fade-up" style="text-align:center">
+    <div class="section-label" style="text-align:center">Early feedback</div>
+    <h2>What beta testers <em>are saying.</em></h2>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card fade-up">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"I've been using HubSpot for 3 years. ZentryCRM does 80% of what I need for a fraction of the cost — and it's already in my Sheets."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" style="background:#0A5CFF">JM</div>
+        <div>
+          <div class="testimonial-name">Jeff M.</div>
+          <div class="testimonial-role">SaaS Account Executive</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"The sequence feature is a game changer. Set up my Day 3 and Day 7 follow-ups once and they just run. Closed 2 deals this month I would have forgotten about."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" style="background:#059669">SR</div>
+        <div>
+          <div class="testimonial-name">Sarah R.</div>
+          <div class="testimonial-role">Freelance Consultant</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Finally a CRM that doesn't require a 3-hour onboarding. My whole team was using it in 10 minutes. The Kanban view inside Sheets is genuinely impressive."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" style="background:#7C3AED">KP</div>
+        <div>
+          <div class="testimonial-name">Kevin P.</div>
+          <div class="testimonial-role">Startup Founder</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="fade-up">
+      <div class="section-label" style="text-align:center">Pricing</div>
+      <h2>Simple, <em>transparent</em> pricing.</h2>
+      <p style="color:var(--muted);font-size:17px;margin-top:12px">Start free. Upgrade when you're ready. No contracts, cancel anytime.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card fade-up">
+        <div class="price-name">Basic</div>
+        <div class="price-amount">$3</div>
+        <div class="price-period">per month</div>
+        <ul class="price-features">
+          <li>100 emails per month</li>
+          <li>Open tracking</li>
+          <li>1 active campaign</li>
+          <li>Gmail integration</li>
+          <li>Duplicate checker</li>
+        </ul>
+        <a href="https://tally.so/r/obVMPx" class="price-btn price-btn-outline">Get started</a>
+      </div>
+      <div class="price-card fade-up">
+        <div class="price-name">Starter</div>
+        <div class="price-amount" style="font-size:28px;color:var(--muted)">Coming Soon</div>
+        <div class="price-period">&nbsp;</div>
+        <ul class="price-features">
+          <li>500 emails per month</li>
+          <li>Open & reply tracking</li>
+          <li>Unlimited campaigns</li>
+          <li>One-click SMS</li>
+          <li>Unsubscribe management</li>
+        </ul>
+        <a href="https://tally.so/r/obVMPx" class="price-btn price-btn-outline">Get started</a>
+      </div>
+      <div class="price-card featured fade-up">
+        <div class="price-badge">Most popular</div>
+        <div class="price-name">Pro</div>
+        <div class="price-amount" style="font-size:28px;color:rgba(255,255,255,.7)">Coming Soon</div>
+        <div class="price-period">&nbsp;</div>
+        <ul class="price-features">
+          <li>Unlimited emails</li>
+          <li>Full Sales Channel CRM</li>
+          <li>Auto follow-up sequences</li>
+          <li>Auto reply detection</li>
+          <li>Meeting scheduling</li>
+          <li>Dashboard & analytics</li>
+          <li>Campaign color coding</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://tally.so/r/obVMPx" class="price-btn price-btn-solid">Get started</a>
+      </div>
+      <div class="price-card fade-up">
+        <div class="price-name">Team</div>
+        <div class="price-amount" style="font-size:28px;color:var(--muted)">Coming Soon</div>
+        <div class="price-period">&nbsp;</div>
+        <ul class="price-features">
+          <li>Up to 5 users</li>
+          <li>Shared pipeline view</li>
+          <li>Team campaigns</li>
+          <li>Admin dashboard</li>
+          <li>Onboarding support</li>
+        </ul>
+        <a href="https://tally.so/r/obVMPx" class="price-btn price-btn-outline">Get started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to <em>close more deals?</em></h2>
+  <p>Join the waitlist and be first to access ZentryCRM when we launch. No credit card. No commitment.</p>
+  <a href="https://tally.so/r/obVMPx" class="cta-white">Get early access — it's free</a>
+  <div class="cta-note">Works with Gmail · Google Sheets · 2 min setup</div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Zentry<span>CRM</span></div>
-  <p style="margin-bottom:12px">© 2026 ZentryCRM.com · All rights reserved</p>
-  <div style="display:flex;gap:20px;justify-content:center">
-    <a href="/">Home</a>
+  <div class="footer-links">
+    <a href="mailto:cs@zentrycrm.com">cs@zentrycrm.com</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
     <a href="/privacy">Privacy Policy</a>
-    <a href="mailto:cs@zentrycrm.com">Contact</a>
+    <a href="/terms">Terms of Service</a>
   </div>
+  <div class="footer-copy">© 2026 ZentryCRM.com · All rights reserved</div>
 </footer>
 
+<script>
+// Scroll animations
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Nav shadow on scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.boxShadow = window.scrollY > 20
+    ? '0 2px 20px rgba(0,0,0,.08)' : 'none';
+});
+</script>
 </body>
 </html>
