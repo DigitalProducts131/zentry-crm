@@ -447,6 +447,9 @@ footer {
 .footer-links { display: flex; gap: 28px; }
 .footer-links a { font-size: 13px; color: rgba(255,255,255,.4); text-decoration: none; }
 .footer-links a:hover { color: rgba(255,255,255,.7); }
+.footer-legal { display: flex; gap: 20px; justify-content: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.08); }
+.footer-legal a { font-size: 12px; color: rgba(255,255,255,.3); text-decoration: none; }
+.footer-legal a:hover { color: rgba(255,255,255,.6); }
 .footer-copy { font-size: 13px; color: rgba(255,255,255,.3); }
 
 /* ANIMATIONS */
@@ -478,6 +481,7 @@ footer {
     <a href="#features">Features</a>
     <a href="#how">How it works</a>
     <a href="#pricing">Pricing</a>
+    <a href="/privacy" style="color:var(--muted)">Legal</a>
   </div>
   <a href="https://tally.so/r/obVMPx" class="nav-cta">Get Early Access</a>
 </nav>
@@ -882,16 +886,21 @@ footer {
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Zentry<span>CRM</span></div>
-  <div class="footer-links">
+<footer style="flex-direction:column;align-items:center;text-align:center;gap:0">
+  <div class="footer-logo" style="margin-bottom:12px">Zentry<span>CRM</span></div>
+  <div class="footer-links" style="justify-content:center">
     <a href="mailto:cs@zentrycrm.com">cs@zentrycrm.com</a>
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
-    <a href="/privacy">Privacy Policy</a>
-    <a href="/terms">Terms of Service</a>
   </div>
-  <div class="footer-copy">© 2026 ZentryCRM.com · All rights reserved</div>
+  <div class="footer-copy" style="margin-top:12px">© 2026 ZentryCRM.com · All rights reserved</div>
+  <div class="footer-legal">
+    <a href="/privacy">Privacy Policy</a>
+    <span style="color:rgba(255,255,255,.15)">·</span>
+    <a href="/terms">Terms of Service</a>
+    <span style="color:rgba(255,255,255,.15)">·</span>
+    <a href="mailto:cs@zentrycrm.com">Contact</a>
+  </div>
 </footer>
 
 <script>
