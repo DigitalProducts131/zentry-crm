@@ -1,0 +1,2 @@
+# Blue product redesign
+Use cobalt #245bea, navy #10254b, ice #eef4ff, white #ffffff and slate #60708a. Manrope typography with system fallback. Broad editorial hero paired with a detailed interactive sample CRM, then alternating product stories and a single bold pricing section. The recognizable signature is the spreadsheet grid flowing into a blue pipeline workspace. Avoid huge decorative logos, generic equal card grids and unsupported social proof. All preview data is explicitly fictional; no actual sending controls.
