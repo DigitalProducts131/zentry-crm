@@ -11,4 +11,4 @@
 
 Removed unsupported marketing: open tracking, automatic reply detection, unlimited sending, Calendar/Meet scheduling UI, SMS, date reporting, archives, team accounts, instant Marketplace installation, unverified social proof/testimonials and adoption statistics.
 
-Owner approved $5/month per user for full access. Team features are explicitly coming soon; no subscription is available yet. Google service limits continue to apply.
+Owner approved $10/month per user for full access. Team features are explicitly coming soon; no subscription is available yet. Google service limits continue to apply.
